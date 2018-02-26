@@ -1,0 +1,25 @@
+How to handle mutiple models for a same problem ?
+
+link options to associated solver (ex: -aspiration-factor to ROTS). What if related to several solvers ?
+display after each problem the expected argument. Modify help to group by solvers
+
+pass solverNo to SolverState to be recorded in the EP (and more keep trace of all changes). Use a chain of SolverState ?
+
+version number (put it in manifest.mf) ?
+
+change representation vec and matrix by objects
+
+see VNS, ACO: 
+
+see SA
+Connolly. An improved annealing scheme for the QAP. European Journal of Operational Research, 46:93–100, 1990.
+
+ILS: dont'look bits ? is it useful ?
+see "don’t look bits" /Users/diaz/Dropbox/Partages/Dan-Danny-Salvador-Philippe/QAP/Stutzel-LS and Metaheuristics-2002.pdf
+and ILS-QAP-UpdatedTR.pdf
+
+see MH biogeography-based optimization (BBO)
+
+ModelQAP: replace Move by PermutationMove in methods (ex: doMove) to avoid casts:
+pb: remove Override and need to implement a method for the interface (add an default implem, insert
+an intermediate class AbstractPermutationMove between AbstractModel and ModelQAP ?...)
