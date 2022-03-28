@@ -75,12 +75,12 @@ public class RobustTabuSearch extends AbstractIterativeSearch {
             int costMove = model.costOfMove(currentCost, sol, move);
             int delta = costMove - currentCost;
             boolean aspired = (costMove < bestCost);    // move not tabu?
-            boolean autorized = false;                  // move forced?
+            boolean authorized = false;                  // move forced?
             for (PairVariableValue vv : move.getAssignments(sol, vvPool)) {
                 //System.out.println(" pair " + vv);
                 int endTabu = tabuList.get(vv);
                 if (endTabu < currentIteration) {
-                    autorized = true;
+                    authorized = true;
                 }
 
                 if (endTabu < currentIteration - aspiration) {
@@ -91,7 +91,7 @@ public class RobustTabuSearch extends AbstractIterativeSearch {
                     || (aspired && alreadyAspired // many move aspired
                     && (delta < minDelta))// => take best one
                     || (!aspired && !alreadyAspired // no move aspired yet
-                    && (delta < minDelta) && autorized)) {
+                    && (delta < minDelta) && authorized)) {
                 neighborhood.setBestMove(move);
                 minDelta = delta;
 

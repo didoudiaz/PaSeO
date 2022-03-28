@@ -37,7 +37,7 @@ public class PDFGamma extends AbstractPDF {
     }
 
     public static double gamma(double x, double k, double theta) {
-        return Math.pow(x, k - 1) * Math.exp(-x / theta) / Math.pow(theta, k) * gamma(k);
+        return Math.pow(x, k - 1) * Math.exp(-x / theta) / (Math.pow(theta, k) * gamma(k));
     }
 
     /*

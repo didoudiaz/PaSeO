@@ -19,8 +19,8 @@ import solver.SolverCatalog;
 
 public class Main {
 
-// static String pb = "tai40a";
-    static String pb = "dre90";
+ static String pb = "tai40a";
+//    static String pb = "dre90";
     static int nbRots = 4;
     static int nbEo = 4;
 //    static double force = 0.52; // expon and tai40a
